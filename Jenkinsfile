@@ -8,7 +8,7 @@ pipeline {
           git branch: 'main', url: 'https://github.com/d-wheatley/lbg-vat-calculator.git'
         }
     }
-   stage('Install') {
+    stage('Install') {
         steps {
             // Install the ReactJS dependencies
             sh "npm install"
