@@ -12,13 +12,13 @@ pipeline {
     stage('Install') {
         steps {
             // Install the ReactJS dependencies
-            sh "sudo npm install"
+            sh "npm install"
         }
     }
     stage('Test') {
         steps {
           // Run the ReactJS tests
-          sh "sudo npm test"
+          sh "npm test"
         }
     }
     stage('SonarQube Analysis') {
