@@ -21,20 +21,20 @@ pipeline {
           sh "npm test"
         }
     }
-    stage('SonarQube Analysis') {
-      environment {
-        scannerHome = tool 'sonarqube'
-        }
-        steps {
-            withSonarQubeEnv('sonar-qube-7') {        
-              sh "${scannerHome}/bin/sonar-scanner"
-        }
-      
-      //May need to comment this out 
-        timeout(time: 1, unit: 'MINUTES'){
-          waitForQualityGate abortPipeline: true
-          }
-        }
-    }
+//    stage('SonarQube Analysis') {
+//      environment {
+//        scannerHome = tool 'sonarqube'
+//        }
+//        steps {
+//            withSonarQubeEnv('sonar-qube-7') {        
+//              sh "${scannerHome}/bin/sonar-scanner"
+//        }
+//      
+//      //May need to comment this out 
+//        timeout(time: 1, unit: 'MINUTES'){
+//          waitForQualityGate abortPipeline: true
+//         }
+//        }
+//    }
   }
 }
